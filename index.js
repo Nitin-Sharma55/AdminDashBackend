@@ -10,8 +10,10 @@ const app = express();
 app.use(express.json());
 app.use("/api/users",authRoutes);
 app.use("/api/user/item",itemRoutes);
+const PORT = process.env.PORT || 4000;
 
-app.listen(process.env.PORT,async ()=>{
+
+app.listen(PORT,async ()=>{
     console.log(`App running on Port ${process.env.PORT}`)
     await connectDB()
 })
